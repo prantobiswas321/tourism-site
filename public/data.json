@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "A weekend in London",
+    "cost": 450,
+    "description": "Plan your weekend in London with our special itineraries, whether you are spending a romantic weekend in the city or are visiting with friends or family. There are so many things to do in London on weekends.",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/destination-london-07-800x533.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Thrilling New York",
+    "cost": 1250,
+    "description": "Your satisfaction is all that matters to us. Come and see the spectacular Central Park Tours in NYC how it should be seen, in style and comfort.central park tour , horse and carrige tour,pedicab tour.new york tour.",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/destination-new-york-01-800x533.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Big in Japan",
+    "cost": 899,
+    "description": "Do you wish to travel with family, friends, school, church, club, or organization to Japan? We have the knowledge and experience to fulfill your wants. Let us arrange your sensational trip to Japan!",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/japan_01-800x533.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Trip to Ancient Rome",
+    "cost": 42,
+    "description": "An expert guide will lead you on this wonderful family friendly tour tour to discover ancient Rome. With pre-booked tickets, you’ll avoid the entrance queues at the most popular ancient sites in the city, essential when touring with kids.",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/rome_01-800x533.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Colorful Berlin",
+    "cost": 560,
+    "description": "Berlin's combo of glamour and grit is bound to mesmerise all those keen to explore its vibrant culture, cutting-edge architecture, fabulous food, intense parties and tangible history.",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/destination-berlin-07-800x533.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Faraway Sydney",
+    "cost": 2100,
+    "description": "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harbourfront Sydney Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life.",
+    "image": "http://travelicious.bold-themes.com/main-demo/wp-content/uploads/sites/2/2018/09/destination-sydney-08-800x533.jpg"
+  }
+]
