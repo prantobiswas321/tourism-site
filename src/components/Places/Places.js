@@ -14,7 +14,7 @@ const Places = () => {
     return (
         <div>
             {
-                places ? <div class="d-flex justify-content-center">
+                !places ? <div class="d-flex justify-content-center">
                     <div class="spinner-border" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
