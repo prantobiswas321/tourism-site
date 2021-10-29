@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
@@ -12,6 +13,7 @@ const PlaceOrder = () => {
             .then(data => setPlaces(data))
     }, [])
     const detail = places.find(single => single.id === parseInt(id));
+    const url = `/myOrders`;
     return (
         <div className='bg-secondary'>
             <div className="py-5 text-white">
@@ -19,6 +21,10 @@ const PlaceOrder = () => {
                 <h1 className="mt-3">Name: {detail?.name}</h1>
                 <h4 className="mx-5 px-5">Description: {detail?.description}</h4>
                 <h4>Cost: ${detail?.cost}</h4>
+                {/* <button className='btn btn-danger'>Confirm Order</button> */}
+                <Link to={url}>
+                    <button className='btn btn-danger'>Confirm Order</button>
+                </Link>
             </div>
         </div>
     );
