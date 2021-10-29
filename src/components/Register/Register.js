@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
@@ -28,9 +28,11 @@ const Register = () => {
 
                     <input type="submit" value="Register" className="bg-success px-3 py-2 rounded-3 text-white" />
 
-                    <NavLink className="text-decoration-none" to="/login">
+                    <p className="pt-5 fw-bold text-dark">If you already have An Account? <Link to="/login">Login</Link></p>
+
+                    {/* <Link className="text-decoration-none" to="/login">
                         <p className="pt-5 fw-bold text-dark">If you already have An Account?</p>
-                    </NavLink>
+                    </Link> */}
                 </form>
             </div>
         </div>

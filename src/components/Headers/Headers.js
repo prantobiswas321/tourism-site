@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavHashLink } from 'react-router-hash-link';
+import useAuth from '../hooks/useAuth';
 import './Headers.css';
 
 const Headers = () => {
+    const { user, logOut } = useAuth();
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-color">
             <div className="container">
@@ -11,8 +13,8 @@ const Headers = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="ms-auto fs-6 fw-bold navbar-nav">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <div className="ms-auto fs-4 fw-bold navbar-nav">
+                        <ul className="navbar-nav mb-2 mb-lg-0">
                             <li className="nav-item navLinks">
                                 <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/home" activeClassName="selected"
                                     activeStyle={{ color: '#00FFFF' }} >Home</NavHashLink>
@@ -38,36 +40,42 @@ const Headers = () => {
                                     activeStyle={{ color: '#00FFFF' }}>Register</NavHashLink>
                             </li>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/login" activeClassName="selected"
                                     activeStyle={{ color: '#00FFFF' }} >Login</NavHashLink>
-                            </li>
+                            </li> */}
 
-                            <li className="nav-item">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/myOrders" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }} >My orders</NavHashLink>
-                            </li>
+                            {user.email &&
+                                <li className="nav-item">
+                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/myOrders" activeClassName="selected"
+                                        activeStyle={{ color: '#00FFFF' }} >My orders</NavHashLink>
+                                </li>
+                            }
 
-                            <li className="nav-item">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/manageOrders" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }} >Manage orders</NavHashLink>
-                            </li>
+                            {user.email &&
+                                <li className="nav-item">
+                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/manageOrders" activeClassName="selected"
+                                        activeStyle={{ color: '#00FFFF' }} >Manage orders</NavHashLink>
+                                </li>
+                            }
 
-                            <li className="nav-item">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/addPlace" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }} >Add a place</NavHashLink>
-                            </li>
+                            {user.email &&
+                                <li className="nav-item">
+                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/addPlace" activeClassName="selected"
+                                        activeStyle={{ color: '#00FFFF' }} >Add a place</NavHashLink>
+                                </li>
+                            }
 
 
-                            {/* {
+                            {
                                 user.email ?
-                                    <button className="btn btn-success" onClick={handleLogOut}>{signOutIcon} <span className="fw-bold text-info">Log Out</span> {user.email}</button>
+                                    <button className="btn btn-success" onClick={logOut} > <span className="fw-bold text-info">Log Out</span> {user.email}</button>
                                     :
                                     <li className="nav-item">
                                         <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/login" activeClassName="selected"
                                             activeStyle={{ color: '#00FFFF' }} >Login</NavHashLink>
                                     </li>
-                            } */}
+                            }
                         </ul>
 
 

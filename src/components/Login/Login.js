@@ -1,8 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+
 import './Login.css';
 
 const Login = () => {
+    const { signInUsingGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+    // console.log('Came from', location.state?.from);
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
+
     return (
         <div className='container'>
             <div className="col my-auto">
@@ -29,11 +46,13 @@ const Login = () => {
 
                 <h1 className="my-3 textColor fw-bold">or you can,</h1>
 
-                <button className="btn btn-warning" >Sign In With Google</button>
+                <button onClick={handleGoogleLogin} className="btn btn-warning" >Sign In With Google</button>
 
-                <NavLink className="text-decoration-none fw-bold" to="/register">
+                <p className="pt-3 text-dark fw-bold">New to RelaxTravel!! <Link to="/register">Create an account</Link></p>
+
+                {/* <Link className="text-decoration-none fw-bold" to="/register">
                     <p className="pt-3 text-dark fw-bold">Create new account!!</p>
-                </NavLink>
+                </Link> */}
 
             </div>
         </div>
