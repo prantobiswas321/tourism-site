@@ -8,11 +8,11 @@ const PlaceOrder = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/prantobiswas321/tourism_data/main/data.json')
+        fetch('http://localhost:5000/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
-    const detail = places.find(single => single.id === parseInt(id));
+    const detail = places.find(single => single.key === parseInt(id));
     const url = `/myOrders`;
     return (
         <div className='bg-secondary'>

@@ -6,7 +6,7 @@ const Places = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/prantobiswas321/tourism_data/main/data.json')
+        fetch('http://localhost:5000/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
