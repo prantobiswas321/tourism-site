@@ -5,6 +5,7 @@ import './Headers.css';
 
 const Headers = () => {
     const { user, logOut } = useAuth();
+    const url = `/myOrders/${user.email}`;
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-color">
             <div className="container">
@@ -49,7 +50,7 @@ const Headers = () => {
 
                             {user.email &&
                                 <li className="nav-item">
-                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/myOrders" activeClassName="selected"
+                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to={url} activeClassName="selected"
                                         activeStyle={{ color: '#00FFFF' }} >My orders</NavHashLink>
                                 </li>
                             }
