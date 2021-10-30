@@ -24,7 +24,7 @@ const Places = () => {
                         {
                             places.map(place => <Place
                                 place={place}
-                                key={place.id}
+                                key={place._id}
                             ></Place>)
                         }
                     </div>

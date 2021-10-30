@@ -12,7 +12,7 @@ const PlaceOrder = () => {
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
-    const detail = places.find(single => single.key === parseInt(id));
+    const detail = places.find(single => single._id === id);
     const url = `/myOrders`;
     return (
         <div className='bg-secondary'>

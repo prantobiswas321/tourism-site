@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './Place.css';
 
 const Place = (props) => {
-    const { name, cost, image, key } = props.place;
-    const url = `/placeOrder/${key}`;
+    const { name, cost, image, _id } = props.place;
+    const url = `/placeOrder/${_id}`;
     return (
         <div>
             <div className="col">
