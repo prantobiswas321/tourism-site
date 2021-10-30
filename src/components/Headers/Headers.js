@@ -35,10 +35,12 @@ const Headers = () => {
                                     activeStyle={{ color: '#00FFFF' }} >About</NavHashLink>
                             </li> */}
 
-                            <li className="nav-item navLinks">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/register" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }}>Register</NavHashLink>
-                            </li>
+                            {!user.email &&
+                                <li className="nav-item navLinks">
+                                    <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/register" activeClassName="selected"
+                                        activeStyle={{ color: '#00FFFF' }}>Register</NavHashLink>
+                                </li>
+                            }
 
                             {/* <li className="nav-item">
                                 <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none navLinks" to="/login" activeClassName="selected"
