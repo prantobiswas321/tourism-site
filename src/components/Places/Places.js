@@ -6,7 +6,7 @@ const Places = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://evil-witch-07300.herokuapp.com/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
@@ -20,7 +20,7 @@ const Places = () => {
                     </div>
                 </div>
                     :
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 pb-5">
                         {
                             places.map(place => <Place
                                 place={place}

@@ -32,9 +32,6 @@ const Register = () => {
 
                     <p className="pt-5 fw-bold text-dark">If you already have An Account? <Link to="/login">Login</Link></p>
 
-                    {/* <Link className="text-decoration-none" to="/login">
-                        <p className="pt-5 fw-bold text-dark">If you already have An Account?</p>
-                    </Link> */}
                 </form>
             </div>
         </div>

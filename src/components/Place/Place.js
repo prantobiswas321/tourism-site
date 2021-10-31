@@ -6,7 +6,7 @@ const Place = (props) => {
     const { name, cost, image, _id } = props.place;
     const url = `/placeOrder/${_id}`;
     return (
-        <div>
+        <div className='mb-5'>
             <div className="col">
                 <div className="card-color text-center">
                     <img src={image} className="card-img-top mx-auto mt-3 w-75 mx-auto mb-2 rounded-3" alt="" />

@@ -26,16 +26,6 @@ const Headers = () => {
                                     activeStyle={{ color: '#00FFFF' }} >Places</NavHashLink>
                             </li>
 
-                            {/* <li className="nav-item navLinks">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/profile" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }} >Profile</NavHashLink>
-                            </li> */}
-
-                            {/* <li className="nav-item navLinks">
-                                <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/about" activeClassName="selected"
-                                    activeStyle={{ color: '#00FFFF' }} >About</NavHashLink>
-                            </li> */}
-
                             {!user.email &&
                                 <li className="nav-item navLinks">
                                     <NavHashLink style={{ color: 'white' }} className="me-3 text-decoration-none" to="/register" activeClassName="selected"
