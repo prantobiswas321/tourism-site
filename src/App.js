@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/cjs/rea
 import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-import MyOrders from './components/MyOrders/MyOrders';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import AddPlace from './components/AddPlace/AddPlace';
 import NotFound from './components/NotFound/NotFound';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyOrders from './components/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
             <PrivateRoute path="/placeOrder/:id">
               <PlaceOrder></PlaceOrder>
             </PrivateRoute>
-            <PrivateRoute path="/myOrders/:email">
+            <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
             </PrivateRoute>
             <PrivateRoute path="/manageOrders">

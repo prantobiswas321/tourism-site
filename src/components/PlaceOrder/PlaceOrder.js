@@ -10,7 +10,9 @@ const PlaceOrder = () => {
     const nameRef = useRef();
     const emailRef = useRef();
     const addressRef = useRef();
-    const idRef = useRef();
+    const phoneRef = useRef();
+    const bookingNameRef = useRef();
+    const costRef = useRef();
 
     const { user } = useAuth();
     const { id } = useParams();
@@ -49,22 +51,27 @@ const PlaceOrder = () => {
     const handleSubmit = e => {
         const name = nameRef.current.value;
         const email = emailRef.current.value;
+        const phone = phoneRef.current.value;
         const address = addressRef.current.value;
-        const orderId = idRef.current.value;
+        // const orderId = idRef.current.value;
+        const bookingName = bookingNameRef.current.value;
+        const cost = costRef.current.value;
+        const orderStatus = 'pending';
 
-        const order = { name, email, address, orderId };
+
+        const orderInfo = { name, email, phone, address, bookingName, cost, orderStatus };
         // console.log(name, email, address);
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(order)
+            body: JSON.stringify(orderInfo)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Successfully added.');
+                    alert('Successfully Booked.');
                     e.target.reset();
                 }
             })
@@ -86,8 +93,13 @@ const PlaceOrder = () => {
                     <input type="text" value={user.displayName || ''} ref={nameRef} readOnly />
                     <label htmlFor="">Email: </label>
                     <input type="email" value={user.email || ''} ref={emailRef} readOnly />
-                    <label htmlFor="">Order Id: </label>
-                    <input type="text" value={id || ''} ref={idRef} readOnly />
+                    {/* <input type="text" value={id || ''} ref={idRef} readOnly /> */}
+                    <label htmlFor="">Phone no : </label>
+                    <input type="number" ref={phoneRef} id="" />
+                    <label htmlFor="">Order Name: </label>
+                    <input type="text" value={order?.name || ''} ref={bookingNameRef} readOnly />
+                    <label htmlFor="">Order Cost: </label>
+                    <input type="text" value={order?.cost || ''} ref={costRef} readOnly />
                     <label htmlFor="">Address: </label>
                     <textarea type="text" ref={addressRef} placeholder='Address' />
 
